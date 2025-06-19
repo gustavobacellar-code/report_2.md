@@ -493,58 +493,25 @@ for name, model in models.items():
     plt.show() # Display the heatmap.
 ```
 
-## Preparação para o github
-
-### Subtask:
-Organizar os arquivos e o notebook para serem facilmente compartilhados no GitHub.
-
-## Refinamento e documentação
-
-### Subtask:
-Revisar o código e as explicações, e adicionar qualquer documentação adicional necessária para o repositório do GitHub.
-
-**Reasoning**:
-Add a markdown section at the beginning of the notebook providing an executive summary of the project, its goals, and the key findings regarding the influence of gender on hiring based on the analysis performed so far.
-
-```python
-# Executive Summary
-# This notebook presents an analysis of a dataset to investigate the potential influence of gender on hiring outcomes.
-# The primary goal is to explore the relationship between various features, including gender, and whether an individual is employed.
-# The analysis includes:
-# 1. Data Loading and Initial Inspection: Loading the dataset and understanding its structure and contents.
-# 2. Exploratory Data Analysis (EDA): Visualizing distributions and relationships, focusing on gender and employment status, salary, and experience.
-# 3. Data Preprocessing: Preparing the data for machine learning by encoding categorical variables and splitting the data into training and testing sets.
-# 4. Machine Learning Model Training: Training several classification models to predict employment status.
-# 5. Model Evaluation: Assessing the performance of the trained models using metrics such as accuracy, precision, recall, and F1-score, and visualizing confusion matrices.
-# 6. Analysis of Gender Influence: Interpreting the findings from EDA and model evaluation to draw conclusions about the influence of gender on hiring within this dataset.
-#
-# Key Findings:
-# - The dataset contains a significant imbalance in gender representation, with more male participants.
-# - A large majority of individuals in the dataset are reported as employed.
-# - Initial EDA visualizations suggest some differences in salary and experience distributions between employed and non-employed individuals, and potentially between genders within these groups. However, these visualizations do not definitively prove a causal link or significant disparity in hiring directly attributable to gender, as other factors like experience and salary expectations also play a role.
-# - The trained machine learning models, particularly Random Forest and Gradient Boosting, achieved very high performance metrics (near-perfect or perfect scores on the test set). While this indicates the models are highly capable of predicting employment status based on the available features, the high performance makes it challenging to isolate the specific impact of individual features like gender from the model's coefficients or feature importances alone without further in-depth analysis techniques (e.g., permutation importance, partial dependence plots).
-# - Based on the direct visual evidence from the EDA, there isn't a strong indication of a clear bias in hiring outcomes solely based on gender within this dataset, considering the overall high employment rate reported. The dataset's characteristics (imbalanced gender representation, high overall employment rate) and the models' high performance make a direct interpretation of gender's isolated influence complex without more granular analysis or a dataset with a more balanced outcome distribution.
-#
-# Conclusion for GitHub:
-# While the dataset and models allow for accurate prediction of employment status, a direct, statistically significant conclusion about gender bias in hiring cannot be definitively drawn solely from the presented EDA and high-level model evaluation due to data characteristics and model performance. Further analysis with techniques specifically designed to interpret model predictions and feature importance in highly accurate models would be necessary for a more conclusive statement on gender's influence. The current analysis provides a foundational look at the data and builds predictive models as requested.
-```
-
 ## Summary:
 
-### Data Analysis Key Findings
+### Conclusão
+Embora o conjunto de dados e os modelos permitam uma previsão precisa do status de emprego, uma conclusão direta e estatisticamente significativa sobre o viés de gênero na contratação não pode ser tirada de forma definitiva apenas com base na Análise Exploratória de Dados (EDA) apresentada e na avaliação de alto nível do modelo, devido às características dos dados e ao desempenho dos modelos. Uma análise mais aprofundada, com técnicas especificamente projetadas para interpretar as previsões do modelo e a importância das características (feature importance) em modelos de alta precisão, seria necessária para uma declaração mais conclusiva sobre a influência do gênero. A análise atual fornece uma visão fundamental dos dados e constrói os modelos preditivos conforme solicitado.
 
-*   The dataset contains significantly more data points for the 'masculino' gender compared to 'feminino'.
-*   A large majority of individuals in the dataset are currently employed.
-*   Exploratory Data Analysis (EDA) visualizations suggest potential differences in the distributions of salary and years of experience between employed and non-employed individuals, and possibly between genders within these groups.
-*   After one-hot encoding categorical features, the number of features increased from 13 to 67.
-*   The dataset was successfully split into training and testing sets with an 80/20 ratio.
-*   Machine learning models (Logistic Regression, Random Forest, and Gradient Boosting) were trained to predict employment status.
-*   The Random Forest and Gradient Boosting models achieved perfect accuracy, precision, recall, and F1-scores (1.0000) on the test set.
-*   The Logistic Regression model also performed very well, with an accuracy of 0.9877, precision of 0.9867, recall of 0.9989, and an F1-score of 0.9927.
-*   The high performance of the models makes it challenging to isolate the specific influence of individual features like gender on hiring outcomes without more in-depth analysis techniques.
-*   Based on the direct visual evidence from the EDA, there isn't a strong indication of a clear bias in hiring outcomes solely based on gender within this dataset, considering the overall high employment rate reported.
+### Principais Resultados da Análise de Dados
 
-### Insights or Next Steps
+*   O conjunto de dados contém um número significativamente maior de pontos de dados para o gênero 'masculino' em comparação com o 'feminino'.
+*   A grande maioria dos indivíduos no conjunto de dados está atualmente empregada.
+*   As visualizações da Análise Exploratória de Dados (EDA) sugerem potenciais diferenças nas distribuições de salário e anos de experiência entre indivíduos empregados e não empregados, e possivelmente entre gêneros dentro desses grupos.
+*   Após a aplicação da codificação one-hot nas variáveis categóricas, o número de características aumentou de 13 para 67.
+*   O conjunto de dados foi dividido com sucesso em conjuntos de treinamento e teste na proporção de 80/20.
+*   Modelos de aprendizado de máquina (Regressão Logística, Random Forest e Gradient Boosting) foram treinados para prever o status de emprego.
+*   Os modelos Random Forest e Gradient Boosting alcançaram acurácia, precisão, recall e F1-score perfeitos (1.0000) no conjunto de teste.
+*   O modelo de Regressão Logística também apresentou um desempenho muito bom, com uma acurácia de 0.9877, precisão de 0.9867, recall de 0.9989 e um F1-score de 0.9927.
+*   O alto desempenho dos modelos torna desafiador isolar a influência específica de características individuais como o gênero nos resultados de contratação sem técnicas de análise mais aprofundadas.
+*   Com base na evidência visual direta da EDA, não há uma forte indicação de um viés claro nos resultados de contratação com base apenas no gênero dentro deste conjunto de dados, considerando a alta taxa geral de emprego relatada.
 
-*   Given the high model performance, further analysis using techniques like permutation importance or partial dependence plots could help to better understand the specific contribution and influence of the 'genero' feature on the model's predictions, which might reveal subtle biases not apparent in the overall metrics or simple visualizations.
-*   Investigating the dataset for potential biases in other features (e.g., salary, experience) that might correlate with gender could provide additional context for understanding hiring outcomes.
+### Insights or próximos passos
+
+*   Dado o alto desempenho do modelo, análises adicionais usando técnicas como a importância de permutação (permutation importance) ou gráficos de dependência parcial (partial dependence plots) poderiam ajudar a entender melhor a contribuição e a influência específica da característica 'gênero' nas previsões do modelo, o que poderia revelar vieses sutis não aparentes nas métricas gerais ou em visualizações simples.
+*   Investigar o conjunto de dados em busca de vieses potenciais em outras características (por exemplo, salário, experiência) que possam se correlacionar com o gênero poderia fornecer um contexto adicional para a compreensão dos resultados de contratação.
