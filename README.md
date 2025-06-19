@@ -54,6 +54,8 @@ plt.xlabel('Empregado (1=Sim, 0=Não)')
 plt.ylabel('Contagem')
 plt.show()
 ```
+![image](https://github.com/user-attachments/assets/ccbf3e94-3cef-436e-b934-ef3e5709760f)
+![image](https://github.com/user-attachments/assets/05636c25-758e-4e62-87d7-685f613648f8)
 
 **Reasoning**:
 Visualize the relationship between 'genero' and 'empregado' by creating a bar plot showing the proportion of employed individuals by gender, and then create box plots to explore the relationship between 'empregado' and numerical variables 'salario_medio' and 'experiencia_anos', separated by gender.
@@ -88,6 +90,10 @@ plt.ylabel('Anos de Experiência')
 plt.xticks([0, 1], ['Não Empregado', 'Empregado'])
 plt.show()
 ```
+![image](https://github.com/user-attachments/assets/0b9e8836-b36b-4139-a7ed-fac88f6e82c5)
+![image](https://github.com/user-attachments/assets/67533587-4842-4829-99a5-9f6073da86d2)
+![image](https://github.com/user-attachments/assets/3e5ef6a0-5e5d-47b8-a142-61ea482a8193)
+
 
 ## Pré-processamento para machine learning
 
@@ -143,7 +149,14 @@ print("Shape of X_test:", X_test.shape)
 print("Shape of y_train:", y_train.shape)
 print("Shape of y_test:", y_test.shape)
 ```
-
+```
+Shape of original features: (5268, 13)
+Shape of processed features: (5268, 21)
+Shape of X_train: (4214, 21)
+Shape of X_test: (1054, 21)
+Shape of y_train: (4214,)
+Shape of y_test: (1054,)
+```
 ## Indução de modelos de machine learning
 
 ### Subtask:
@@ -257,6 +270,28 @@ for name, model in models.items():
     plt.ylabel('True Label')
     plt.show()
 ```
+- Logistic Regression
+Accuracy: 0.9877
+Precision: 0.9867
+Recall: 0.9989
+F1-score: 0.9927
+-------------------------
+![image](https://github.com/user-attachments/assets/be4cd58d-72a7-4737-8b14-88d3ae94ba90)
+- Random Forest
+Accuracy: 1.0000
+Precision: 1.0000
+Recall: 1.0000
+F1-score: 1.0000
+-------------------
+![image](https://github.com/user-attachments/assets/7908d716-53e3-49ce-a733-567e2683939f)
+- Gradient Boosting
+Accuracy: 1.0000
+Precision: 1.0000
+Recall: 1.0000
+F1-score: 1.0000
+-----------------------
+![image](https://github.com/user-attachments/assets/57a794b6-c238-4f2e-9908-af40b5b6d3b1)
+
 
 ## Análise da influência do gênero
 
